@@ -1,0 +1,21 @@
+{
+  "name": "loggent",
+  "description": "Loggent app bower components",
+  "main": "",
+  "authors": [
+    "Seyade <b.kuen@hotmail.co.uk>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "bootstrap": "^3.3.7"
+  }
+}

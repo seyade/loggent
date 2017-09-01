@@ -1,0 +1,48 @@
+.loggent-form {
+  width: 700px;
+  margin: 20px auto;
+}
+
+.control {
+  margin-bottom: 10px;
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 35px;
+    font-size: 0.85rem;
+    border-radius: 2px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+  }
+
+  &__button {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: 1px solid #555;
+    border-radius: 1px;
+    cursor: pointer;
+    width: 200px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: darken(#333, 10%);
+      width: 220px;
+    }
+  }
+
+  &__textarea {
+    border: 1px solid #555;
+    border-radius: 2px;
+    width: 100%;
+    display: block;
+  }
+}
