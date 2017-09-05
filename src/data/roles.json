@@ -1,0 +1,52 @@
+{
+  "data": {
+    "roles": [
+      {
+        "id": "123abc456def",
+        "title": "Head of Front end development",
+        "agent": "Miu Furinji",
+        "agency": "Ryuzanpaku",
+        "phone": "0203 123 45 67",
+        "email": "miu@ryuzanpaku.jp",
+        "description": "Expert understanding of HTML and CSS, also would have used SASS or LESS previously. Ideally with React.js and Redux."
+      },
+      {
+        "id": "789ghi012jkl",
+        "title": "Front end React developer",
+        "agent": "Shigure Kousaka",
+        "agency": "Ryuzanpaku",
+        "phone": "0203 123 45 78",
+        "email": "shigure@ryuzanpaku.com",
+        "description": "Proficient understanding of web technologies, including Javascript, HTML5, CSS3, Bootstrap
+    Understanding of Server Side CSS pre-processing platforms, such as LESS and SASS. Good understanding of advanced JavaScript frameworks such as NodeJs, AngularJs or ReactJs"
+      },
+      {
+        "id": "345mno678pqr",
+        "title": "Senior UX developer",
+        "agent": "Lucy Heart",
+        "agency": "Smart Heart",
+        "phone": "07725001550",
+        "email": "lucy@smartheart.co.uk",
+        "description": "Responsibilities will include translation of the UI/UX design wireframes to actual code that will produce visual elements of the application. Javascript/Angular, HTML5, CSS3."
+      },
+      {
+        "id": "901stu234vwy",
+        "title": "UI developer",
+        "agent": "Ma Renka",
+        "agency": "Chi sao recruitment",
+        "phone": "01234 5678900",
+        "email": "ma.renka@chisao.com",
+        "description": "Programmes used: HTML, CSS, JavaScript, Angular and React"
+      },
+      {
+        "id": "567zab890cde",
+        "title": "Lead interactive developer",
+        "agent": "Pamela Lopez",
+        "agency": "Cancun recruitment",
+        "phone": "0207 098 76 54",
+        "email": "pamela.lopez@cancun.co",
+        "description": "As the Front End Developer, you will join one of their cross-functional specialist product teams and work on core UI development working with extensively with JavaScript and Angular 2."
+      }
+    ]
+  }
+}

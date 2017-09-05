@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import createFragment from 'react-addons-create-fragment';
+
 import TextInput from './TextInput';
 import TextAreaInput from './TextAreaInput';
 import Button from './Button';
@@ -22,12 +24,14 @@ class LoggentForm extends Component {
     super(props);
 
     this.state = {
-      title: '',
-      agent: '',
-      agency: '',
-      phone: '',
-      email: '',
-      description: '',
+      role: createFragment({
+        title: '',
+        agent: '',
+        agency: '',
+        phone: '',
+        email: '',
+        description: '',
+      }),
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -40,8 +44,9 @@ class LoggentForm extends Component {
     });
   };
 
-  handleSave(e) {
+  handleSave = (e) => {
     e.preventDefault();
+    console.log('Form state: ', this.state);
     this.props.onSubmit(this.state);
   };
 
@@ -54,7 +59,7 @@ class LoggentForm extends Component {
           label="Role Title"
           name="title"
           placeholder="Title..."
-          value={this.state.title}
+          value={this.state.role.title}
           onChange={this.handleChange} />
 
         <TextInput
@@ -62,7 +67,7 @@ class LoggentForm extends Component {
           label="Agent name"
           name="agent"
           placeholder="Agent name..."
-          value={this.state.agent}
+          value={this.state.role.agent}
           onChange={this.handleChange} />
 
         <TextInput
@@ -70,7 +75,7 @@ class LoggentForm extends Component {
           label="Agency"
           name="agency"
           placeholder="Agency..."
-          value={this.state.agency}
+          value={this.state.role.agency}
           onChange={this.handleChange} />
 
         <TextInput
@@ -78,7 +83,7 @@ class LoggentForm extends Component {
           label="Phone"
           name="phone"
           placeholder="Phone..."
-          value={this.state.phone}
+          value={this.state.role.phone}
           onChange={this.handleChange} />
 
         <TextInput
@@ -86,7 +91,7 @@ class LoggentForm extends Component {
           label="Email"
           name="email"
           placeholder="Email..."
-          value={this.state.email}
+          value={this.state.role.email}
           onChange={this.handleChange} />
 
         <TextAreaInput
@@ -96,7 +101,7 @@ class LoggentForm extends Component {
           placeholder="Role description"
           rows={10}
           cols={80}
-          value={this.state.description}
+          value={this.state.role.description}
           onChange={this.handleChange} />
 
         <br />

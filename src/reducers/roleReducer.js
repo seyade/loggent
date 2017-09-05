@@ -1,11 +1,11 @@
-import * as types from '../actions/roleActions';
+import * as types from '../actions/actionTypes';
 
-export function roleReducer(state = [], action) {
-  swith(sction.type) {
-    case types.CREATE_ROLE_SUCCESS:
-      return [
-        ...roles,
-        Object.assign({}, action.role)
-      ];
+export default function roleReducer(state = [], action) {
+  switch(action.type) {
+    case types.LOAD_ROLES_SUCCESS:
+      return action.roles;
+
+    default:
+      return state;
   }
 }

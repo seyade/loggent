@@ -6,6 +6,6 @@ import HomePage from './HomePage';
 describe('HomePage', () => {
   it('renders without crashing', () => {
     const wrapper = shallow(<HomePage />);
-    expect(wrapper.length).toEqual(1);
+    expect(wrapper.find('.loggent-home__title').text()).toBe('Manage your job applications');
   });
 });

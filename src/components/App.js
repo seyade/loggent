@@ -1,33 +1,22 @@
-import React, { Component } from 'react';
-import LoggentForm from './common/LoggentForm';
-import HEADER from './common/header/Header';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import Header from './common/header/Header';
+import Main from './common/main/Main';
 import Footer from './common/footer/Footer';
+
 import './App.scss';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit = (fields) => {
-    console.log('APP fields', fields);
-  };
-
-  render() {
-    return (
+const App = (props) => {
+  return (
+    <BrowserRouter>
       <div className="App">
-        <HEADER />
-
-        <div className="loggent-form">
-          <LoggentForm onSubmit={this.handleSubmit} />
-        </div>
-
+        <Header />
+        <Main />
         <Footer />
-
       </div>
-    );
-  }
-}
+    </BrowserRouter>
+  );
+};
 
 export default App;

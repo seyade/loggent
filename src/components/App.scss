@@ -1,8 +1,3 @@
-.loggent-form {
-  width: 700px;
-  margin: 20px auto;
-}
-
 .control {
   margin-bottom: 10px;
 
@@ -15,7 +10,7 @@
     display: block;
     width: 100%;
     height: 35px;
-    font-size: 0.85rem;
+    font-size: 1.5rem;
     border-radius: 2px;
     padding: 0 10px;
     border: 1px solid #ddd;
@@ -25,7 +20,7 @@
     background-color: #333;
     color: #fff;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 10px 20px;
     border: 1px solid #555;
     border-radius: 1px;
@@ -35,7 +30,7 @@
 
     &:hover {
       background-color: darken(#333, 10%);
-      width: 220px;
+      width: 210px;
     }
   }
 

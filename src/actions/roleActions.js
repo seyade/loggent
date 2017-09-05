@@ -1,51 +1,47 @@
 import * as types from './actionTypes';
 import axios from 'axios';
 
+const apiUrl = 'https://59af0ee5f6443e0011ce20ff.mockapi.io/api/v1/roles';
+
 export function loadRolesSuccess(roles) {
   return {
     type: types.LOAD_ROLES_SUCCESS,
-    roles,
+    roles: roles.data,
   };
 }
 
-export function createRoleSuccess(role) {
+export function saveRoleSuccess(role) {
   return {
-    type: types.CREATE_ROLE_SUCCESS,
+    type: types.SAVE_ROLE_SUCCESS,
     role,
   };
 }
 
 export function loadRoles() {
-  // a thunk always returns a function that accepts a dispatch
   return dispatch => {
-    return axios.get('https://loggent-ff273.firebaseio.com/')
-      .then(role => {
-        console.log('Roles: ', roles);
+    return axios.get(apiUrl)
+      .then(roles => {
+        console.log('Roles from actions: ', roles);
+        dispatch(loadRolesSuccess(roles));
+      })
+      .catch(error => {
+        if (error) {
+          console.log('Oops! We need to fix this', error);
+        }
       });
   };
 }
 
-
 export function saveRole(course) {
   return (dispatch, getState) => {
-    return axios.post('https://loggent-ff273.firebaseio.com/')
+    return axios.post(apiUrl)
       .then(role => {
         if (role.id) {
-          dispatch(createRoleSuccess(role));
+          dispatch(saveRoleSuccess(role));
         }
       })
       .catch(error => {
         throw(error);
-      });
-  };
-}
-
-export function createRole() {
-  // a thunk always returns a function that accepts a dispatch
-  return dispatch => {
-    return axios.post('https://loggent-ff273.firebaseio.com/')
-      .then(role => {
-        console.log('Role created: ', role);
       });
   };
 }
