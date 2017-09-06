@@ -26,7 +26,7 @@ class RolesPage extends Component {
     // TODO:
     // Get data received from form
     // 2. save data with "this.props.saveRole(role)"
-    
+
     // this.props.saveRole(fields);
 
     console.log('State: ', this.state);
@@ -40,10 +40,7 @@ class RolesPage extends Component {
           <LoggentForm onSubmit={this.handleSubmit} />
         </div>
         <section className="loggent__cards">
-          {console.log('State to props: ', this.props.roles)}
-          {
-            this.props.roles.map((role, i) => <RolesList {...role} index={i} key={i} />)
-          }
+          <RolesList roles={this.props.roles} />
         </section>
       </article>
     );

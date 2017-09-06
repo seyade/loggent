@@ -10,28 +10,118 @@
 }
 
 .role {
-  width: 250px;
+  width: 245px;
   float: left;
-  border: 1px solid #333;
+  border: 1px solid rgba(0, 148, 205, 0.2);
+  box-shadow: 0 0 50px 20px rgba(190, 225, 255, 0.05) inset;
+  background-color: #fff;
+  color: #777;
   margin-left: -1px;
   margin-bottom: -1px;
-  height: 300px;
-  padding: 20px;
+  height: 350px;
+  font-family: 'Open Sans';
+  position: relative;
 
   &__index {
-    border: 1px solid #333;
+    border: 3px solid #b5b5b5;
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    padding-top: 1px;
+    color: #959595;
+    width: 30px;
+    height: 30px;
+    padding-top: 2px;
     display: block;
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto 0;
   }
 
   &__title {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 20px 0 10px;
+    padding: 0 20px;
+    color: #555;
+
+    &-description {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #a5a5a5;
+      display: block;
+    }
+
+    .fa {
+      color: #ffae00;
+    }
+  }
+
+  &__agent-info {
+    font-size: 0.75rem;
+    color: #757575;
+    padding: 0 20px;
+  }
+
+  &__call-time {
+    font-style: italic;
+    color: #757575;
+    font-size: 0.8rem;
+    padding: 0 20px;
+  }
+
+  &__contact {
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    padding: 7px 10px;
+    margin: 0 10px;
+
+    &-description {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #a5a5a5;
+      display: block;
+    }
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    padding: 10px 20px;
+  }
+
+  .fa {
+    margin-right: 5px;
+  }
+}
+
+.buttons {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 5px 10px;
+
+  &__btn {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--save,
+  &--close {
+    background-color: transparent;
+    border: 0;
+  }
+
+  &--save {
+    float: right;
+    color: #00bc62;
+  }
+
+  &--close {
+    float: left;
+    color: #cf2300;
+  }
+
+  .fa {
+    margin-right: 5px;
   }
 }
