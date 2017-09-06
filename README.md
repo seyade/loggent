@@ -7,5 +7,6 @@
 - Able to edit roles
 - Able to share roles
 - Able to see progress of roles
+- Able to rate agency
 
 © 2017 Loggent
