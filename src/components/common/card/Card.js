@@ -4,6 +4,10 @@ import './Card.scss';
 
 const Card = ({ title, agent, agency, phone, email, description, createdAt, index }) => {
 
+  let momentCreatedAt = moment(createdAt),
+    formattedTime = momentCreatedAt.format('LT').toLowerCase(),
+    formattedDate = momentCreatedAt.format('DD.MM.YY');
+
   return (
     <article className="card role">
       <span className="role__index">{index + 1}</span>
@@ -11,17 +15,15 @@ const Card = ({ title, agent, agency, phone, email, description, createdAt, inde
         <span className="role__title-main">{title}</span>
       </h2>
 
-      <p className="role__agent-info">
-        <span className="role__agent">{agent}&nbsp;</span>
-        &nbsp;|&nbsp;
-        <span className="role__agency">&nbsp;{agency}</span>
-      </p>
+      <section className="role__agent-info">
+        <span className="role__agent">{agent}&nbsp;</span> &nbsp;|&nbsp; <span className="role__agency">&nbsp;{agency}</span>
+      </section>
 
       <section className="role__section role__call-info">
         <span className="fa fa-phone card__icon"></span>
         <p className="role__call-phone"><a href={'tel:' + phone.replace(/\s/g, '')}>{phone}</a></p>
         <p className="role__call-time">
-          {moment(createdAt).format('LT')} @ {moment(createdAt).format('DD.MM.YY')}
+           <strong>Date</strong> {formattedDate} @ {formattedTime}
         </p>
       </section>
 
