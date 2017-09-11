@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Axios from 'axios';
 
 import * as roleActions from '../../actions/roleActions';
-import LoggentForm from '../common/LoggentForm';
+import LoggentForm from '../common/forms/LoggentForm';
 import RolesList from './RolesList';
 import './Role.scss';
 
@@ -34,14 +34,13 @@ class RolesPage extends Component {
 
   render() {
     return (
-      <article className="loggent clearfix">
-        <h1>Roles Page</h1>
-        <div className="loggent__form">
+      <article className="loggent box--flex clearfix">
+        <div className="loggent-form-panel box-item--flex">
           <LoggentForm onSubmit={this.handleSubmit} />
         </div>
-        <section className="loggent__cards">
+        <div className="loggent-cards-panel box-item--flex">
           <RolesList roles={this.props.roles} />
-        </section>
+        </div>
       </article>
     );
   }

@@ -1,10 +1,20 @@
-.loggent__form {
-  width: 400px;
-  margin: 20px auto;
-  float: left;
+.loggent {
+  background: #e3ded5;
 }
 
 .loggent__cards {
   float: right;
   width: 70%;
+}
+
+.box--flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-flow: row wrap;
+}
+
+.box-item--flex {
+  flex-grow: 1;
 }
