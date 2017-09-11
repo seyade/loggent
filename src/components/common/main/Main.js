@@ -6,7 +6,7 @@ import RolesPage from '../../role/RolesPage';
 
 const Main = (props) => {
   return (
-    <div>
+    <div className="loggent-app">
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/roles" component={RolesPage} />
