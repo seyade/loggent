@@ -26,22 +26,24 @@ export function loadRoles() {
       })
       .catch(error => {
         if (error) {
-          console.log('Oops! We need to fix this', error);
+          console.log('Oops! We need to fix this.', error);
         }
       });
   };
 }
 
-export function saveRole(course) {
+export function saveRole(role) {
   return (dispatch, getState) => {
-    return axios.post(apiUrl)
-      .then(role => {
-        if (role.id) {
-          dispatch(saveRoleSuccess(role));
-        }
+    return axios.post(apiUrl, role)
+      .then(savedRole => {
+        console.log('Role: ', savedRole);
+        dispatch(saveRoleSuccess(savedRole));
+        console.log('Get state: ', getState());
       })
       .catch(error => {
-        throw(error);
+        if (error) {
+          console.log('Oops! Role not saved.', error);
+        }
       });
   };
 }

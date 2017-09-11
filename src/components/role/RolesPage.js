@@ -26,8 +26,7 @@ class RolesPage extends Component {
     // TODO:
     // Get data received from form
     // 2. save data with "this.props.saveRole(role)"
-
-    // this.props.saveRole(fields);
+    this.props.saveRole(role);
 
     console.log('State: ', this.state);
   };
