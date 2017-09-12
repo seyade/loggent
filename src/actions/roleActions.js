@@ -13,7 +13,7 @@ export function loadRolesSuccess(roles) {
 export function saveRoleSuccess(role) {
   return {
     type: types.SAVE_ROLE_SUCCESS,
-    role,
+    role: role.data,
   };
 }
 
@@ -36,7 +36,6 @@ export function saveRole(role) {
   return (dispatch, getState) => {
     return axios.post(apiUrl, role)
       .then(savedRole => {
-        console.log('Role: ', savedRole);
         dispatch(saveRoleSuccess(savedRole));
         console.log('Get state: ', getState());
       })

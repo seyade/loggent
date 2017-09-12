@@ -78,8 +78,8 @@
 
 // thi sshould be in some global .scss file
 .loggent-cards-panel {
-  width: 75%;
-  padding: 20px;
+  width: 70%;
+  padding: 20px 35px;
   background-color: #e3ded5;
 }
 
@@ -91,6 +91,7 @@
 
 .loggent-form {
   padding: 0 40px;
+  position: relative;
 
   &__title {
     margin: 0;
@@ -99,7 +100,7 @@
 
   &__info {
     margin: 0 -40px 0;
-    padding: 0 20px 20px;
+    padding: 0 45px 20px;
     background-color: #f7f6f3;
   }
 
@@ -112,5 +113,23 @@
 
   &__form-end {
     margin: 0 -20px;
+  }
+
+  &__close {
+    position: absolute;
+    right: -25px;
+    top: 29%;
+    background-color: #444;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-top: 11px;
+    padding-left: 2px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: 30;
   }
 }

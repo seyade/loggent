@@ -1,9 +1,9 @@
 import React from 'react';
 import moment from 'moment';
+import { truncate } from '../../../helpers/stringy';
 import './Card.scss';
 
 const Card = ({ title, agent, agency, phone, email, description, createdAt, index }) => {
-
   let momentCreatedAt = moment(createdAt),
     formattedTime = momentCreatedAt.format('LT').toLowerCase(),
     formattedDate = momentCreatedAt.format('DD.MM.YY');
@@ -12,16 +12,16 @@ const Card = ({ title, agent, agency, phone, email, description, createdAt, inde
     <article className="card role">
       <span className="role__index">{index + 1}</span>
       <h2 className="role__title">
-        <span className="role__title-main">{title}</span>
+        <span className="role__title-main">{truncate(title, 20)}</span>
       </h2>
 
       <section className="role__agent-info">
-        <span className="role__agent">{agent}&nbsp;</span> &nbsp;|&nbsp; <span className="role__agency">&nbsp;{agency}</span>
+        <span className="role__agent">{agent}&nbsp;</span> &nbsp;|&nbsp; <span className="role__agency">&nbsp;{truncate(agency, 12)}</span>
       </section>
 
       <section className="role__section role__call-info">
         <span className="fa fa-phone card__icon"></span>
-        <p className="role__call-phone"><a href={'tel:' + phone.replace(/\s/g, '')}>{phone}</a></p>
+        <p className="role__call-phone"><a href={'tel:' + phone.replace(/\s+/gi, '')}>{phone}</a></p>
         <p className="role__call-time">
            <strong>Date</strong> {formattedDate} @ {formattedTime}
         </p>

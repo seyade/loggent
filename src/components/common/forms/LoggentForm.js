@@ -7,17 +7,21 @@ import Button from './Button';
 import './Forms.scss';
 
 /**
+  * FAKE DATA
   *
-  * Fake data for form
-  *
-  * - title: "Head of front end development"
-  * - agent: "Miu Furinji"
-  * - agency: "Vivid Resources"
-  * - phone: "0207 123 45 67"
-  * - email: "miu.furinji@vivid.com"
-  * - description: "Expert understanding of HTML and CSS, also would have used SASS or LESS
-  *                previously. Ideally with React.js and Redux."
-  *
+  Head of front end development
+  Miu Furinji
+  Vivid Resources
+  0207 123 45 67
+  miu.furinji@vivid.com
+  Expert understanding of HTML and CSS, also would have used SASS or LESS previously. Ideally with React.js and Redux.
+
+  Senior JavaScript Developer
+  Ella Donley
+  La Fosse Associate
+  0207 209 3220
+  ella.donley@lafosse.com
+  This role is developing with React. You will be building new features onto an existing mobile app at a start-up based in Shoreditch.
   */
 
 class LoggentForm extends Component {
@@ -31,7 +35,7 @@ class LoggentForm extends Component {
       phone: '',
       email: '',
       description: '',
-      createdAt: new Date().now
+      createdAt: new Date()
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -116,6 +120,8 @@ class LoggentForm extends Component {
             onSave={e => this.handleSave(e)}
             text="SAVE ROLE" />
         </section>
+
+        <span className="loggent-form__close">X</span>
 
       </form>
     );
