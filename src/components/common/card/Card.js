@@ -29,7 +29,7 @@ const Card = ({ title, agent, agency, phone, email, description, createdAt, inde
 
       <section className="role__section role__email">
         <span className="fa fa-at card__icon"></span>
-        <p className="role__email-text">{email}</p>
+        <p className="role__email-text">{truncate(email, 23)}</p>
       </section>
 
       <section className="buttons clearfix">
