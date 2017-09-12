@@ -10,3 +10,9 @@ body {
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
 }
+
+/* overrides */
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}

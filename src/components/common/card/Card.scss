@@ -1,5 +1,6 @@
 .role {
-  width: 245px;
+  width: 240px;
+  height: 380px;
   float: left;
   border: 1px solid rgba(26, 200, 233,0.3);
   box-shadow: 0 0 50px 20px rgba(190, 225, 255, 0.05) inset;
@@ -8,11 +9,11 @@
   color: #444;
   margin-left: -1px;
   margin-bottom: -1px;
-  height: 400px;
   font-family: 'Montserrat', 'Open Sans', arial, sans-serif;
   position: relative;
   text-align: center;
   transition: all 0.3s ease-in-out;
+  animation: zoom-it 0.3s cubic-bezier(.87,.85,.44,.93);
   position: relative;
 
   &:hover {
@@ -176,4 +177,29 @@ svg path {
   padding: 60px 12px 40px;
   //background: -webkit-linear-gradient(-182deg, rgba(248, 233, 203, 0.3) 9%,rgba(26, 200, 233,0.3) 84%);
   background: linear-gradient(-182deg, rgba(248, 233, 203, 0.3) 9%, rgba(26, 200, 233,0.3) 180%);
+}
+
+// ANIMATION
+@-webkit-keyframes zoom-it {
+  0% { transform: scale(0); }
+
+  50% { transform: scale(1.05); }
+
+  100% { transform: scale(1); }
+}
+
+@-moz-keyframes zoom-it {
+  0% { transform: scale(0); }
+
+  50% { transform: scale(1.05); }
+
+  100% { transform: scale(1); }
+}
+
+@keyframes zoom-it {
+  0% { transform: scale(0); }
+
+  50% { transform: scale(1.05); }
+
+  100% { transform: scale(1); }
 }

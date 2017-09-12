@@ -7,17 +7,21 @@ import Button from './Button';
 import './Forms.scss';
 
 /**
+  * FAKE DATA
   *
-  * Fake data for form
-  *
-  * - title: "Head of front end development"
-  * - agent: "Miu Furinji"
-  * - agency: "Vivid Resources"
-  * - phone: "0207 123 45 67"
-  * - email: "miu.furinji@vivid.com"
-  * - description: "Expert understanding of HTML and CSS, also would have used SASS or LESS
-  *                previously. Ideally with React.js and Redux."
-  *
+  Head of front end development
+  Miu Furinji
+  Vivid Resources
+  0207 123 45 67
+  miu.furinji@vivid.com
+  Expert understanding of HTML and CSS, also would have used SASS or LESS previously. Ideally with React.js and Redux.
+
+  Senior JavaScript Developer
+  Ella Donley
+  La Fosse Associate
+  0207 209 3220
+  ella.donley@lafosse.com
+  This role is developing with React. You will be building new features onto an existing mobile app at a start-up based in Shoreditch.
   */
 
 class LoggentForm extends Component {
@@ -25,14 +29,13 @@ class LoggentForm extends Component {
     super(props);
 
     this.state = {
-      role: createFragment({
-        title: '',
-        agent: '',
-        agency: '',
-        phone: '',
-        email: '',
-        description: '',
-      }),
+      title: '',
+      agent: '',
+      agency: '',
+      phone: '',
+      email: '',
+      description: '',
+      createdAt: new Date()
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -55,13 +58,15 @@ class LoggentForm extends Component {
     return (
       <form className="loggent-form">
         <section className="loggent-form__info">
+
           <h3 className="loggent-form__title">Enter role info</h3>
+
           <TextInput
             id="role-title"
             label="Role Title"
             name="title"
             placeholder="Role title..."
-            value={this.state.role.title}
+            value={this.state.title}
             onChange={this.handleChange} />
 
           <TextInput
@@ -69,7 +74,7 @@ class LoggentForm extends Component {
             label="Agent name"
             name="agent"
             placeholder="Agent name..."
-            value={this.state.role.agent}
+            value={this.state.agent}
             onChange={this.handleChange} />
 
           <TextInput
@@ -77,7 +82,7 @@ class LoggentForm extends Component {
             label="Agency"
             name="agency"
             placeholder="Agency..."
-            value={this.state.role.agency}
+            value={this.state.agency}
             onChange={this.handleChange} />
 
           <TextInput
@@ -85,7 +90,7 @@ class LoggentForm extends Component {
             label="Phone"
             name="phone"
             placeholder="Phone..."
-            value={this.state.role.phone}
+            value={this.state.phone}
             onChange={this.handleChange} />
 
           <TextInput
@@ -93,7 +98,7 @@ class LoggentForm extends Component {
             label="Email"
             name="email"
             placeholder="Email..."
-            value={this.state.role.email}
+            value={this.state.email}
             onChange={this.handleChange} />
         </section>
 
@@ -105,7 +110,7 @@ class LoggentForm extends Component {
             placeholder="Add extra info..."
             rows={10}
             cols={80}
-            value={this.state.role.description}
+            value={this.state.description}
             onChange={this.handleChange} />
         </section>
 
@@ -115,6 +120,8 @@ class LoggentForm extends Component {
             onSave={e => this.handleSave(e)}
             text="SAVE ROLE" />
         </section>
+
+        <span className="loggent-form__close">X</span>
 
       </form>
     );

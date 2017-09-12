@@ -19,17 +19,15 @@ class RolesPage extends Component {
   handleSubmit = (role) => {
     console.log('APP role', role);
 
-    this.setState((prevState) => ({
-      roles: [...prevState, role]
-    }));
+    this.props.saveRole(role);
 
-    // TODO:
-    // Get data received from form
-    // 2. save data with "this.props.saveRole(role)"
+    this.setState((prevState) => {
+      return {
+        roles: this.props.roles
+      };
+    });
 
-    // this.props.saveRole(fields);
-
-    console.log('State: ', this.state);
+    console.log('State: ', this.props.roles);
   };
 
   render() {
