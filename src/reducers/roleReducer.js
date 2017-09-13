@@ -11,6 +11,9 @@ export default function roleReducer(state = [], action) {
         Object.assign({}, action.role)
       ];
 
+    case types.DELETE_ROLE_SUCCESS:
+      return [];
+
     default:
       return state;
   }
