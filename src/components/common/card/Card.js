@@ -12,15 +12,18 @@ const Card = ({ title, agent, agency, phone, email, description, createdAt, inde
     <article className="card role">
       <span className="role__index">{index + 1}</span>
       <h2 className="role__title">
+        <span className="role__term-label">Role</span>
         <span className="role__title-main">{truncate(title, 20)}</span>
       </h2>
 
       <section className="role__agent-info">
+        <span className="role__term-label">AGENT</span>
         <span className="role__agent">{agent}&nbsp;</span> &nbsp;|&nbsp; <span className="role__agency">&nbsp;{truncate(agency, 12)}</span>
       </section>
 
       <section className="role__section role__call-info">
-        <span className="fa fa-phone card__icon"></span>
+        {/* <span className="fa fa-phone card__icon"></span> */}
+        <span className="role__term-label">CALL DETAILS</span>
         <p className="role__call-phone"><a href={'tel:' + phone.replace(/\s+/gi, '')}>{phone}</a></p>
         <p className="role__call-time">
            <strong>Date</strong> {formattedDate} @ {formattedTime}
@@ -28,7 +31,8 @@ const Card = ({ title, agent, agency, phone, email, description, createdAt, inde
       </section>
 
       <section className="role__section role__email">
-        <span className="fa fa-at card__icon"></span>
+        {/* <span className="fa fa-at card__icon"></span> */}
+        <span className="role__term-label">EMAIL</span>
         <p className="role__email-text">{truncate(email, 23)}</p>
       </section>
 
