@@ -17,6 +17,13 @@ export function saveRoleSuccess(role) {
   };
 }
 
+export function deleteRoleSuccess(role) {
+  return {
+    type: types.DELETE_ROLE_SUCCESS,
+    role: role.data,
+  };
+}
+
 export function loadRoles() {
   return dispatch => {
     return axios.get(apiUrl)
@@ -42,6 +49,19 @@ export function saveRole(role) {
       .catch(error => {
         if (error) {
           console.log('Oops! Role not saved.', error);
+        }
+      });
+  };
+}
+
+export function deleteRole(role) {
+  return (dispatch, getState) => {
+    return axios.delete(apiUrl, role)
+      .then(() => {
+      })
+      .catch(error => {
+        if (error) {
+          console.log('Oops! Role not deleted.', error);
         }
       });
   };

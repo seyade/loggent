@@ -3,7 +3,7 @@ import moment from 'moment';
 import { truncate } from '../../../helpers/stringy';
 import './Card.scss';
 
-const Card = ({ title, agent, agency, phone, email, description, createdAt, index }) => {
+const Card = ({ title, agent, agency, phone, email, description, createdAt, index, id, deleteCard }) => {
   let momentCreatedAt = moment(createdAt),
     formattedTime = momentCreatedAt.format('LT').toLowerCase(),
     formattedDate = momentCreatedAt.format('DD.MM.YY');
@@ -42,7 +42,7 @@ const Card = ({ title, agent, agency, phone, email, description, createdAt, inde
         </div>
 
         <button className="buttons__btn buttons--save">view more</button>
-        <button className="buttons__btn buttons--close"> delete</button>
+        <button className="buttons__btn buttons--close" onClick={deleteCard(id)}> delete</button>
       </section>
     </article>
   );

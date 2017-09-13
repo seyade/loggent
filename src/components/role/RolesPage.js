@@ -42,7 +42,6 @@ class RolesPage extends Component {
       </article>
     );
   }
-
 };
 
 function mapStateToProps(state, ownProps) {
