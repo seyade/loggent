@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { truncate } from '../../../helpers/stringy';
 import './Card.scss';
+import '../../../assets/svg/table-lamp-simple.svg';
 
 const Card = ({ title, agent, agency, phone, email, description, createdAt, index, id, deleteCard }) => {
   let momentCreatedAt = moment(createdAt),
@@ -16,7 +17,7 @@ const Card = ({ title, agent, agency, phone, email, description, createdAt, inde
         <span className="role__title-main">{truncate(title, 20)}</span>
       </h2>
 
-      <section className="role__agent-info">
+      <section className="role__section role__agent-info">
         <span className="role__term-label">AGENT</span>
         <span className="role__agent">{agent}&nbsp;</span> &nbsp;|&nbsp; <span className="role__agency">&nbsp;{truncate(agency, 12)}</span>
       </section>
@@ -33,7 +34,7 @@ const Card = ({ title, agent, agency, phone, email, description, createdAt, inde
       <section className="role__section role__email">
         {/* <span className="fa fa-at card__icon"></span> */}
         <span className="role__term-label">EMAIL</span>
-        <p className="role__email-text">{truncate(email, 23)}</p>
+        <p className="role__email-text">{truncate(email, 25)}</p>
       </section>
 
       <section className="buttons clearfix">

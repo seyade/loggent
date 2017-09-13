@@ -5,8 +5,10 @@
   border-radius: 5px;
   box-shadow: 0 0 50px 20px rgba(190, 225, 255, 0.05) inset;
   background-color: #f7f6f3;
-  background-image: url('/assets/images/table-lamp-simple.png');
-  background-position: top left;
+  background-image: url('../../../assets/images/table-lamp-simple.png');
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+  background-position: center center;
   // background: radial-gradient(ellipse at center, rgba(255,254,234,0.1) 0%, rgba(255,254,234,0.1) 35%, #b7e8eb 100%);
   color: #444;
   margin-right: 10px;
@@ -15,8 +17,18 @@
   position: relative;
   text-align: center;
   transition: all 0.3s ease-in-out;
-  animation: zoom-it 0.3s cubic-bezier(.87,.85,.44,.93);
   position: relative;
+
+  @for $i from 0 through 8 {
+      &:nth-of-type(#{$i}){
+      // animation: zoom-it #{$i/2}s cubic-bezier(0.87, 0.85, 0.44, 0.93);
+      animation-name: zoom-it;
+      animation-duration: #{$i/7}s;
+      animation-iteration-count: 1;
+      animation-timing-function: cubic-bezier(0.87, 0.85, 0.44, 0.93);
+      // animation-delay:#{$i/2}s;
+    }
+  }
 
   &:hover {
     transform: scale(1.03);
@@ -26,6 +38,7 @@
   &__section {
     position: relative;
     z-index: 25;
+    margin-top: 15px;
   }
 
   &__index {
@@ -186,25 +199,25 @@ svg path {
 
 // ANIMATION
 @-webkit-keyframes zoom-it {
-  0% { transform: scale(0); }
+  0% { transform: scale(0); opacity: 0; }
 
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.05); opacity: 0.5; }
 
-  100% { transform: scale(1); }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 @-moz-keyframes zoom-it {
-  0% { transform: scale(0); }
+  0% { transform: scale(0); opacity: 0; }
 
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.05); opacity: 0.5; }
 
-  100% { transform: scale(1); }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 @keyframes zoom-it {
-  0% { transform: scale(0); }
+  0% { transform: scale(0); opacity: 0; }
 
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.05); opacity: 0.5; }
 
-  100% { transform: scale(1); }
+  100% { transform: scale(1); opacity: 1; }
 }
